@@ -19,6 +19,11 @@ h2 {
   margin: 2%;
 }
 
+.score {
+  display:inline-block;
+  width: 20%;
+  text-align: center;
+}
 
 .container {
   display: flex;
@@ -53,7 +58,7 @@ h2 {
   cursor: pointer;
 }
 
-#reset-button {
+#reset-button, #player-toggle, #start-turn {
   background-color: white;
   border: 1px solid black;
   color: black;
@@ -62,10 +67,11 @@ h2 {
   margin: 1%;
   text-align: center;
   width: 456px;
+  display:inline-block;
 }
 
 
-#reset-button:hover {
+#reset-button:hover, #player-toggle:hover, #start-turn:hover {
   background-color: black;
   color: white;
   cursor: pointer;
