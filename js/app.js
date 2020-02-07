@@ -49,7 +49,7 @@ function toggleTurn(){
 }
 
 function toggleMode(){
-  mode = mode === "Two Players" ? " One Player" : "Two Players";
+  mode = mode === "Two Players" ? "One Player" : "Two Players";
   document.getElementById("player-toggle").textContent = mode;
   init();
   if(startturn == "O"){
@@ -122,45 +122,72 @@ function getWinner() {
 }
 
 function computerTurn(){
-  /*
+  
   let index = 0;
   for(let i = 0; i < winningConditions.length; i++){
     let count = 0;
-    let count2 = 0;
     for(let j = 0; j < winningConditions[i].length; j++){
-      if(board[j] == "O"){
+      if(board[winningConditions[i][j]] == "O"){
         count++;
-      }
-      else if(board[j] == "X"){
-        count2++;
       }
       if(count == 2){
         for(let k = 0; k < winningConditions[i].length; k++){
-          if(board[k] == ""){
-            return k;
-          }
-        }
-      }
-      if(othercount == 2){
-        for(let k = 0; k < winningConditions[i].length; k++){
-          if(board[k] == ""){
-            return k;
+          if(board[winningConditions[i][k]] == ""){
+            return winningConditions[i][k];
           }
         }
       }
     }
   }
-  if(board = [
+  for(let i = 0; i < winningConditions.length; i++){
+    let count2 = 0;
+	for(let j = 0; j < winningConditions[i].length; j++){
+      if(board[winningConditions[i][j]] == "X"){
+        count2++;
+      }
+      if(count2 == 2){
+        for(let k = 0; k < winningConditions[i].length; k++){
+          if(board[winningConditions[i][k]] == ""){
+            return winningConditions[i][k];
+          }
+        }
+      }
+    }
+  }
+  
+  let xcount = 0;
+  let ocount = 0;
+  let position = 0;
+  for(let k=0; k<9; k++){
+	  if(board[k] == "X"){
+		  xcount++;
+		  position = k;
+	  }
+  }
+  if(xcount == 1 && position % 2 == 1){
+	  return 4;
+  }
+  if(xcount == 1 && position == 4){
+	  return 8;
+  }
+  if(xcount == 2 && board[0] == "O" && board[4] == "O" && position == 8){
+	  if(board[3] == "X"){
+		  return 2;
+	  }
+	  else{
+		  return 6;
+	  }
+  }
+  if(board == [
     "", "", "",
     "", "", "",
     "", "", ""
   ]){
-    index = 0;
+    return 0;
   }
-  */
-  for(let k = 0; k < 9; k++){
-    if(board[k]==""){
-      return k;
-    }
+  for(let i = 0; i<9;i++){
+	  if(i%2==0 && board[i] == "" && i != 4){
+		  return i;
+	  }
   }
 }
