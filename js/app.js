@@ -158,7 +158,7 @@ function computerTurn(){
     index = 0;
   }
   */
-  for(let k = 0; k < 9; k++;){
+  for(let k = 0; k < 9; k++){
     if(board[k]==""){
       return k;
     }
