@@ -122,6 +122,7 @@ function getWinner() {
 }
 
 function computerTurn(){
+  /*
   let index = 0;
   for(let i = 0; i < winningConditions.length; i++){
     let count = 0;
@@ -156,5 +157,10 @@ function computerTurn(){
   ]){
     index = 0;
   }
-  return index;
+  */
+  for(let k = 0; k < 9; k++;){
+    if(board[k]==""){
+      return k;
+    }
+  }
 }
