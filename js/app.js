@@ -36,6 +36,7 @@ function init() {
   ];
   turn = startturn;
   win = null;
+  takeTurn(0);
   render();
 }
 
