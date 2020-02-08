@@ -7,7 +7,7 @@ const Oscore = document.getElementById("Oscore");
 let startturn = "X";
 let turn;
 let win;
-let mode = "Two Players";
+let mode = "One Player";
 const winningConditions = [
   [0, 1, 2],
   [3, 4, 5],
