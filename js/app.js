@@ -50,7 +50,13 @@ function toggleTurn(){
 
 function toggleMode(){
   mode = mode === "Two Players" ? "One Player" : "Two Players";
-  document.getElementById("player-toggle").textContent = mode;
+  //document.getElementById("player-toggle").textContent = mode;
+  if(mode == "Two Players"){
+	document.getElementById("player-toggle").textContent = "One Player";
+  }
+  else{
+	document.getElementById("player-toggle").textContent = "Two Players";
+  }
   init();
   if(startturn == "O"){
     takeTurn(0);
