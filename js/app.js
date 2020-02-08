@@ -102,12 +102,15 @@ function takeTurn(e) {
         takeTurn(0);
       }
     }
-
   }
 }
 
 function getWinner() {
   let winner = null;
+
+  if (aTie() == "tie") {
+    return "T";
+  }
 
   winningConditions.forEach(function(condition, index) {
     if (
@@ -123,7 +126,7 @@ function getWinner() {
 }
 
 function computerTurn(){
-  
+
   let index = 0;
   for(let i = 0; i < winningConditions.length; i++){
     let count = 0;
@@ -155,7 +158,7 @@ function computerTurn(){
       }
     }
   }
-  
+
   let xcount = 0;
   let ocount = 0;
   let position = 0;
@@ -164,13 +167,30 @@ function computerTurn(){
 		  xcount++;
 		  position = k;
 	  }
+    if(board[k] == "O"){
+		  ocount++;
+	  }
   }
   if(xcount == 1 && position % 2 == 1){
 	  return 4;
   }
+  if(xcount == 1 && ocount == 0 && board[4] == ""){
+    return 4;
+  }
+  if(xcount == 2 && board[4] == "O" && ((board[0] == "X" && board[8] == "X") || (board[2] == "X" && board[6] == "X"))){
+    return 5;
+  }
+  if(xcount == 2 && board[4] == "O" && (board[7] == "X" && (board[0] == "X" || board[2] == "X"))){
+    return 6;
+  }
+  console.log("here");
+  if(xcount == 2 && board[4] == "O" && (board[5] == "X" && board[6] == "X")){
+    return 8;
+  }
   if(xcount == 1 && position == 4){
 	  return 8;
   }
+
   if(xcount == 2 && board[0] == "O" && board[4] == "O" && position == 8){
 	  if(board[3] == "X"){
 		  return 2;
@@ -186,9 +206,53 @@ function computerTurn(){
   ]){
     return 0;
   }
-  for(let i = 0; i<9;i++){
+  for(let i = 0; i<9; i++){
 	  if(i%2==0 && board[i] == "" && i != 4){
 		  return i;
 	  }
+  }
+  for(let i = 0; i<9; i++){
+	  if(i%2==1 && board[i] == ""){
+		  return i;
+	  }
+  }
+}
+
+function aTie(){
+  let counter = 0;
+  let blankcounter = 0;
+  let winningturn = "";
+  for(let i = 0; i < winningConditions.length; i++){
+    let xcounter = 0;
+    let ocounter = 0;
+    for(let j = 0; j < 3; j++){
+      if(board[winningConditions[i][j]] == "X"){
+        xcounter++
+      }
+      if(board[winningConditions[i][j]] == "O"){
+        ocounter++
+      }
+    }
+    if(xcounter > 0 && ocounter > 0){
+      counter++;
+    }
+    else if(xcounter == 2 && ocounter == 0){
+      winningturn = "X";
+    }
+    else if(ocounter == 2 && xcounter == 0){
+      winningturn = "O";
+    }
+  }
+  for(let i = 0; i < 9; i++){
+    if(board[i] == ""){
+      blankcounter++;
+    }
+  }
+
+  if(counter >= 8 || (counter == 7 && blankcounter == 2) || (counter == 7 && blankcounter == 1 && turn != winningturn)){
+    return "tie";
+  }
+  else{
+    return "No tie";
   }
 }
