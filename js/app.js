@@ -7,7 +7,7 @@ const Oscore = document.getElementById("Oscore");
 let startturn = "X";
 let turn;
 let win;
-let mode = "One Player";
+let mode = "Two Players";
 const winningConditions = [
   [0, 1, 2],
   [3, 4, 5],
@@ -51,13 +51,7 @@ function toggleTurn(){
 
 function toggleMode(){
   mode = mode === "Two Players" ? "One Player" : "Two Players";
-  //document.getElementById("player-toggle").textContent = mode;
-  if(mode == "Two Players"){
-	document.getElementById("player-toggle").textContent = "One Player";
-  }
-  else{
-	document.getElementById("player-toggle").textContent = "Two Players";
-  }
+  document.getElementById("player-toggle").textContent = mode;
   init();
   if(startturn == "O"){
     takeTurn(0);
