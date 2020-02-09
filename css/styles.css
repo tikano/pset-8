@@ -4,7 +4,7 @@ body {
   font-family: "Roboto", monospace;
   margin-right:auto;
   margin-left: auto;
-  width: 470px;
+  width: 396px;
 }
 
 
@@ -12,19 +12,33 @@ h1 {
   margin: 0 auto;
   font-family: "Major Mono Display", monospace;
   font-size: 30px;
+  color: blue;
 }
 
 
 h2 {
+  margin: 0 auto;
   font-size: 15px;
   font-weight: lighter;
-
   color: red;
+}
+
+h3 {
+  margin: 0 auto;
+  font-weight: lighter;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+h4 {
+  margin: 0 auto;
+  font-weight: bolder;
+  font-size: 20px;
 }
 
 .score {
   display:inline-block;
-  width: 20%;
+  width: 30%;
   text-align: center;
 }
 
@@ -42,17 +56,18 @@ h2 {
 
 .wrap {
   flex-wrap: wrap;
-  height: 456px;
-  width: 456px;
+  height: 396px;
+  width: 396px;
 }
 
 .square {
   border: 1px solid rgba(0, 0, 0, 0.75);
-  font-size: 96px;
-  height: 150px;
-  line-height: 150px;
+  font-size: 130px;
+  height: 130px;
+  width: 130px;
+  line-height: 130px;
+  line-width: 130px;
   user-select: none;
-  width: 150px;
 }
 
 
@@ -66,7 +81,7 @@ h2 {
   border: 1px solid black;
   color: black;
   font-size: 21px;
-  line-height: 55px;
+  line-height: 30px;
   margin-top: 1%;
   margin-bottom: 1%;
   margin-left:auto;
@@ -74,7 +89,7 @@ h2 {
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 456px;
+  width: 396px;
   display:inline-block;
 }
 
