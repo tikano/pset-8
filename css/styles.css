@@ -30,7 +30,8 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto;
+  margin-left: auto;
+  margin-right:auto
 }
 
 .column {
@@ -77,4 +78,8 @@ h2 {
   background-color: black;
   color: white;
   cursor: pointer;
+}
+
+#buttons{
+  margin:auto;
 }
