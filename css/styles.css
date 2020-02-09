@@ -42,8 +42,8 @@ h2 {
 
 .wrap {
   flex-wrap: wrap;
-  height: 40%;
-  width: 40%;
+  height: 456px;
+  width: 456px;
 }
 
 .square {
@@ -69,7 +69,7 @@ h2 {
   line-height: 55px;
   margin: 1%;
   text-align: center;
-  width: 40%;
+  width: 456px;
   display:inline-block;
 }
 
