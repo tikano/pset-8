@@ -219,6 +219,7 @@ function aTie(){
   let counter = 0;
   let blankcounter = 0;
   let winningturn = "";
+  let twocounter = 0;
   for(let i = 0; i < winningConditions.length; i++){
     let xcounter = 0;
     let ocounter = 0;
@@ -233,6 +234,9 @@ function aTie(){
     if(xcounter > 0 && ocounter > 0){
       counter++;
     }
+    else if((xcounter == 1 && ocounter == 0)) || (ocounter == 1 && xcounter == 0)){
+      twocounter++;
+    }
     else if(xcounter == 2 && ocounter == 0){
       winningturn = "X";
     }
@@ -246,7 +250,7 @@ function aTie(){
     }
   }
 
-  if(counter >= 8 || (counter == 7 && blankcounter == 2) || (counter == 7 && blankcounter == 1 && turn != winningturn)){
+  if(counter >= 8 || (counter == 7 && blankcounter == 2 && twocounter == 1) || (counter == 7 && blankcounter == 1 && turn != winningturn)){
     return "tie";
   }
   else{
