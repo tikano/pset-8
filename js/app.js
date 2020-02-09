@@ -108,10 +108,6 @@ function takeTurn(e) {
 function getWinner() {
   let winner = null;
 
-  if (aTie() == "tie") {
-    return "T";
-  }
-
   winningConditions.forEach(function(condition, index) {
     if (
       board[condition[0]] &&
@@ -121,7 +117,9 @@ function getWinner() {
       winner = board[condition[0]];
     }
   });
-
+  if (aTie() == "tie" && !winner) {
+    return "T";
+  }
   return winner ? winner : board.includes("") ? null : "T";
 }
 
@@ -183,7 +181,6 @@ function computerTurn(){
   if(xcount == 2 && board[4] == "O" && (board[7] == "X" && (board[0] == "X" || board[2] == "X"))){
     return 6;
   }
-  console.log("here");
   if(xcount == 2 && board[4] == "O" && (board[5] == "X" && board[6] == "X")){
     return 8;
   }
