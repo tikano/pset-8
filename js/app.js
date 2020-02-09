@@ -234,7 +234,7 @@ function aTie(){
     if(xcounter > 0 && ocounter > 0){
       counter++;
     }
-    else if((xcounter == 1 && ocounter == 0)) || (ocounter == 1 && xcounter == 0)){
+    else if((xcounter == 1 && ocounter == 0) || (ocounter == 1 && xcounter == 0)){
       twocounter++;
     }
     else if(xcounter == 2 && ocounter == 0){
