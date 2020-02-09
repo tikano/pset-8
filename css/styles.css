@@ -29,6 +29,9 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right:auto;
+  margin-left: auto;
+  width: 1000px;
 }
 
 .column {
@@ -78,7 +81,5 @@ h2 {
 }
 
 #buttons{
-  /*width: 1000px;*/
-  margin-right:auto;
-  margin-left: auto;
+
 }
