@@ -2,6 +2,9 @@
 body {
   text-align: center;
   font-family: "Roboto", monospace;
+  margin-right:auto;
+  margin-left: auto;
+  width: 500px;
 }
 
 
@@ -29,9 +32,6 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right:auto;
-  margin-left: auto;
-  width: 500px;
 }
 
 .column {
